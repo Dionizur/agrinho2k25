@@ -1,11 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Agrinho 2025 - Soluções Sustentáveis</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const botoesSaibaMais = document.querySelectorAll('.saiba-mais');
+    const modal = document.getElementById('modal');
+    const modalTexto = document.getElementById('modal-texto');
+    const fecharModal = document.querySelector('.fechar-modal');
+
+    botoesSaibaMais.forEach(botao => {
+        botao.addEventListener('click', function() {
+            modalTexto.textContent = this.dataset.conteudo;
+            modal.style.display = 'block';
+        });
+    });
+
+    fecharModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+    </script>
 </head>
 <body>
-    
+    <header>
+        <div class="container">
+            <h1>Agrinho 2025</h1>
+            <nav>
+                <ul>
+                    <li><a href="#problema">Problema</a></li>
+                    <li><a href="#solucoes">Soluções</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <section id="problema" class="destaque">
+            <h2>O Desafio Ambiental</h2>
+            <p>O aumento da demanda por alimentos e as mudanças climáticas exigem soluções urgentes...</p>
+            <ul>
+                <li>Desmatamento</li>
+                <li>Uso de agrotóxicos</li>
+                <li>Desperdício de água</li>
+                <li>Erosão do solo</li>
+            </ul>
+        </section>
+        <section id="solucoes">
+            <h2>Soluções Sustentáveis</h2>
+            <div class="solucao">
+                <h3>Agricultura de Precisão</h3>
+                <p>Utilização de tecnologias para otimizar o uso de recursos...</p>
+                <button class="saiba-mais" data-conteudo="Agricultura de precisão é uma estratégia de gestão que utiliza tecnologias como GPS, drones e sensores para otimizar o uso de recursos na agricultura, como água, fertilizantes e defensivos agrícolas. Isso permite aumentar a produtividade e reduzir o impacto ambiental.">Saiba Mais</button>
+            </div>
+            <div class="solucao">
+                <h3>Uso de Energias Renováveis</h3>
+                <p>Implementação de fontes de energia limpa no campo...</p>
+                <button class="saiba-mais" data-conteudo="O uso de energias renováveis na agricultura, como energia solar e eólica, pode reduzir a dependência de combustíveis fósseis e diminuir a emissão de gases de efeito estufa. Além disso, pode gerar economia de custos e aumentar a autonomia energética das propriedades rurais.">Saiba Mais</button>
+            </div>
+            <div class="solucao">
+                <h3>Combate a Fake News</h3>
+                <p>Desenvolvimento de ferramentas que auxiliem na difusão de informações verdadeiras...</p>
+                <button class="saiba-mais" data-conteudo="O combate a fake news no agronegócio é fundamental para garantir a segurança alimentar e a saúde dos consumidores. A disseminação de informações falsas pode gerar pânico, prejudicar a imagem do setor e afetar a economia.">Saiba Mais</button>
+            </div>
+        </section>
+        <section id="projetos">
+            <h2>Projetos Inovadores</h2>
+            <div class="projeto">
+                <h3>Projeto 1</h3>
+                <p>Descrição do projeto...</p>
+            </div>
+        </section>
+        <section id="sobre">
+            <h2>Sobre o Agrinho</h2>
+            <p>Informações sobre o programa Agrinho...</p>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Agrinho</p>
+        </div>
+    </footer>
+    <div id="modal" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar-modal">&times;</span>
+            <p id="modal-texto"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
